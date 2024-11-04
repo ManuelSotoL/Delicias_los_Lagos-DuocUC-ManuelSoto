@@ -1,0 +1,12 @@
+<ion-header [translucent]="true">
+<ion-content [fullscreen]="true">
+<br>
+<ion-title class="tracking-in-expand">Galeria</ion-title>
+    <ion-grid class="gallery-grid">
+      <ion-row>
+        <ion-col size="4" size-md="4" *ngFor="let image of images; let i = index" [ngClass]="{ 'fade-in': true }">
+          <img [src]="image" class="gallery-image" alt="Image {{ i + 1 }}" /> 
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

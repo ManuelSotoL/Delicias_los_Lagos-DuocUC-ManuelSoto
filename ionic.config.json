@@ -1,0 +1,7 @@
+{
+  "name": "DeliciaLosLagos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

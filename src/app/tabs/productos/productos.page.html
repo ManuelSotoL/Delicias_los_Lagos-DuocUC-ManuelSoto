@@ -1,0 +1,18 @@
+<ion-content [fullscreen]="true">
+  <br>
+  <ion-title class="tracking-in-expand">Variedad de Productos</ion-title>
+    <ion-list class="transparent-list">
+      <ion-item *ngFor="let producto of productos">
+        <ion-label>
+          <h2>{{ producto.nombre }}</h2>
+          <p>Precio en gramos: {{ producto.precio }}</p>
+        </ion-label>
+        <div class="content_img">
+          <img [src]="producto.imagen" alt="{{ producto.nombre }}" class="product-image" />
+        </div>
+      </ion-item>
+      <div class="title_tab">
+        <h4>Productos son a pedido, preparados Artesanalmente</h4>
+      </div>
+    </ion-list> 
+</ion-content>

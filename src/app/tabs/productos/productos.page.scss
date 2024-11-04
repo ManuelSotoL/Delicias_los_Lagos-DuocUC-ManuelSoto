@@ -1,0 +1,112 @@
+.transparent-list {
+    background: transparent;
+}
+
+ion-item {
+    --background: transparent;
+    color: #faf6ea;
+}
+
+ion-label h2 {
+    font-size: 1.2em;
+    color: #faf6ea;
+    margin: 0;
+}
+
+ion-label p {
+    font-size: 0.9em;
+    color: #faf6ea;
+    margin: 5px 0 0;
+}
+
+.content_img {
+    width: 80px;
+}
+
+.product-image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-left: auto;
+}
+
+/* animacion texto*/
+.title_tab h4 {
+    text-align: center;
+    color: #faf6ea;
+    -webkit-animation: pulsate-bck 0.5s ease-in-out infinite both;
+    animation: pulsate-bck 2.5s ease-in-out infinite both;
+}
+
+@-webkit-keyframes pulsate-bck {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes pulsate-bck {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+
+.tracking-in-expand {
+    -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    margin: 0 auto;
+    text-align: center;
+    color: #faf6ea;
+}
+
+@-webkit-keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,197 @@
+ion-content {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+ion-card {
+    background-color: #faf6ea;
+    box-shadow: none;
+    border-radius: 5%;
+    margin: 10% auto;
+    width: 90%;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20%;
+}
+
+.login-container img {
+    width: 60%;
+}
+
+.forgot-password {
+    text-align: center;
+    margin-top: 10px;
+    display: block;
+
+    a {
+        color: rgb(3, 103, 216);
+        text-decoration: none;
+    }
+}
+
+ion-card ion-button.login-button {
+    --background: #08666e;
+    color: white;
+}
+
+.registro-button {
+    color: #c37a5a;
+    text-transform: uppercase;
+    margin-top: 10px;
+    -webkit-animation: pulsate-fwd 1.5s ease-in-out infinite both;
+    animation: pulsate-fwd 1.5s ease-in-out infinite both;
+}
+
+@-webkit-keyframes pulsate-fwd {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes pulsate-fwd {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.logo {
+    width: 75%;
+    animation: zoomIn 5s ease-in-out infinite alternate;
+    opacity: 1;
+    animation-fill-mode: forwards;
+}
+
+
+.login-container img {
+    width: 60%;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20%;
+}
+
+
+ion-card ion-input {
+    --background: transparent;
+    color: #000000;
+}
+
+ion-card input {
+    background-color: transparent;
+    color: #000000;
+}
+
+
+ion-card ion-label {
+    --background: transparent;
+    color: #000000;
+}
+
+ion-card label {
+    background-color: transparent;
+    color: #08666e;
+
+}
+
+
+ion-card ion-item {
+    --background: transparent;
+    color: #08666e;
+
+}
+
+ion-card ion-button.login-button {
+    --background: #08666e;
+    color: rgb(0, 0, 0);
+}
+
+
+ion-card ion-select {
+    --background: transparent;
+    color: rgb(255, 255, 255);
+}
+
+ion-card select {
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+
+}
+
+mat-form-field {
+    background-color: transparent;
+}
+
+mat-form-field .mat-form-field-flex {
+    background-color: transparent;
+}
+
+mat-form-field .mat-form-field-infix {
+    background-color: transparent;
+}
+
+input[matInput] {
+    background-color: transparent;
+    color: #ffffff;
+
+}
+
+mat-datepicker-toggle {
+    background-color: transparent;
+
+}
+
+ion-card ion-button {
+    --background: #c37a5a;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+}
+
+.center-title {
+    margin: 0 auto;
+    text-align: center;
+    color: #faf6ea;
+}

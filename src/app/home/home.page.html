@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <app-company-name [companyName]="'Delicias Los Lagos'"></app-company-name>  
+    <ion-buttons slot="end">
+        <ion-menu-button menu="mainMenu"></ion-menu-button>
+    </ion-buttons>  
+  </ion-toolbar> 
+</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding"> 
+
+  <div class="user-info">
+    <img src="../../assets/img/icon-user.png" alt="User Avatar" class="user-avatar" />
+    <h2><strong>{{ bienvenidos }}</strong><br/> {{ email }}</h2>
+  </div>
+  <div class="chocolates-info"> 
+    <h2>Oferta Delicias Los Lagos</h2>
+  </div>
+
+  <ion-card>
+    <img src="../../assets/img/chocolates/bombom.png" alt="Bombom" />
+    <ion-card-header>
+      <ion-card-title>Bombones Rellenos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="descrip-ofert">
+      Deliciosos Bombones rellenos con trufa y frutos secos.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <img src="../../assets/img/chocolates/bombomsolido.png" alt="Bombom" />
+    <ion-card-header>
+      <ion-card-title>Bombones Solidos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="descrip-ofert">
+      Deliciosos Bombones Solidos con un 64% de Cacao.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <img src="../../assets/img/chocolates/cajachocolates.png" alt="cajachocolates" />
+    <ion-card-header>
+      <ion-card-title>Presentacion de Chocolates</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="descrip-ofert">
+      Deliciosos Chocolates Finos Rellenos & Solidos con un 64% de Cacao.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <img src="../../assets/img/chocolates/tortachocolate.png" alt="tortachocolate" />
+    <ion-card-header>
+      <ion-card-title>Torta Chocolate</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="descrip-ofert">
+      Fina Torta de Chocolate, rellena con trufa y frambuesa.
+    </ion-card-content>
+  </ion-card>
+</ion-content>

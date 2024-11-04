@@ -1,0 +1,133 @@
+ion-card {
+    background-color: #faf6ea;
+    backdrop-filter: blur(5px);
+    box-shadow: none;
+    border-radius: 5%;
+    margin: 10% auto;
+    width: 90%;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20%;
+}
+
+.login-container img {
+    width: 60%;
+}
+
+/* color letras que escriben*/
+ion-card ion-input {
+    --background: transparent;
+    color: #000000;
+}
+
+ion-card input {
+    background-color: transparent;
+    color: #000000;
+}
+
+
+ion-card ion-label {
+    --background: transparent;
+    color: #000000;
+}
+
+ion-card label {
+    background-color: transparent;
+    color: #08666e;
+
+}
+
+
+ion-card ion-item {
+    --background: transparent;
+    color: #08666e;
+
+}
+
+ion-card ion-button.login-button {
+    --background: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+
+ion-card ion-select {
+    --background: transparent;
+    color: rgb(255, 255, 255);
+}
+
+ion-card select {
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+
+}
+
+mat-form-field {
+    background-color: transparent;
+}
+
+mat-form-field .mat-form-field-flex {
+    background-color: transparent;
+}
+
+mat-form-field .mat-form-field-infix {
+    background-color: transparent;
+}
+
+input[matInput] {
+    background-color: transparent;
+    color: #ffffff;
+
+}
+
+mat-datepicker-toggle {
+    background-color: transparent;
+
+}
+
+ion-card ion-button {
+    --background: #c37a5a;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+}
+
+.tracking-in-expand {
+    -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    margin: 0 auto;
+    text-align: center;
+    color: #faf6ea;
+}
+
+@-webkit-keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

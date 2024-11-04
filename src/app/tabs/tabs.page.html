@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <app-company-name [companyName]="'Delicias Los Lagos'"></app-company-name>  
+    <ion-buttons slot="end">
+      <ion-menu-button menu="mainMenu"></ion-menu-button>
+    </ion-buttons>  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true"> 
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="productos">
+        <ion-icon name="cube-outline"></ion-icon>
+        <ion-label>Productos</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="contacto">
+        <ion-icon name="person"></ion-icon>
+        <ion-label>Contacto</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="galeria">
+        <ion-icon name="images-outline"></ion-icon>
+        <ion-label>Galeria</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>
