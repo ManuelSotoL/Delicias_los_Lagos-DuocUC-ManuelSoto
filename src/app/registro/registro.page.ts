@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular'; 
-import { AlertController } from '@ionic/angular';  
+import { MenuController } from '@ionic/angular'; // libreria Ionic Core, para controlar el menu lateral, permite abrir y cerrar la interfaz
+import { AlertController } from '@ionic/angular'; // libreria Ionic Core, retroalimentacion visual para el usuario
+import { ServicioDBService } from '../services/servicio-db.service'; // servicio de almacenamiento de informacion ingresada por el usuario
 
 @Component({
   selector: 'app-registro',
@@ -9,17 +10,19 @@ import { AlertController } from '@ionic/angular';
 })
 export class RegistroPage implements OnInit {
 
-  nombre: any='';
-  apellido: any='';
-  selectedOption: any='';
-  selectedDate: any='';
-  usuario: any='';
-  password: any='';
+  nombre: string = '';
+  apellido: string = '';
+  usuario: string = '';
+  email: string = '';
+  password: string = '';
+  tipo_cliente: string = '';
+  primera_compra: string = '';
+  registroStatus: string = '';
 
-  constructor(private alertController: AlertController, private menu: MenuController, ) { }
+  constructor(private alertController: AlertController, private menu: MenuController, private servicioDBService: ServicioDBService ) { }
 
-  ngOnInit() {
-    this.menu.close("mainMenu");
+  async ngOnInit() {
+    await this.servicioDBService.initDB();
   }
 
   async presentAlert(message: string) {
@@ -32,14 +35,32 @@ export class RegistroPage implements OnInit {
     await alert.present();
   }
 
-  guardar() { 
-
-
-    if (this.nombre.trim() === '' || this.apellido.trim() === '') {
+    async guardar() { 
+    if (this.nombre.trim() === '' || this.apellido.trim() === '' || this.usuario.trim() === '' || this.email.trim() === '' || this.tipo_cliente.trim() === '' || this.password.trim() === '') {
       this.presentAlert('Error: nombre y apellido vacios');
     } else {
-      this.presentAlert('Datos Correctos  usuario:  '+this.nombre+' fecha nacimiento: '+this.selectedDate); 
+      this.presentAlert('Su Nombre es: ' +this.nombre + ' ' + this.apellido + ' ' + ' ' + 'Usuario: ' + this.usuario + ' ' + ' Su Correo: ' + this.email + ' ' + ' '+ 'Tipo Cliente: ' + this.tipo_cliente
+      + ' ' + ' Su Contraseña es: ' + ' ' + this.password
+      ); 
+    await this.register();
     }
   }
-
-}
+  async register() {
+    try {
+      await this.servicioDBService.registerUser(
+        this.nombre,
+        this.apellido,
+        this.usuario,
+        this.email,
+        this.password,
+        this.tipo_cliente,
+        this.primera_compra
+      );
+      this.presentAlert('El registro fue exitoso.');
+    } catch (error) {
+      this.presentAlert('Hubo un problema al registrar al Cliente.');
+      console.error('Error en register:', error);
+    }
+  }
+  
+}  

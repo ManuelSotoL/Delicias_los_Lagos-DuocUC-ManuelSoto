@@ -10,51 +10,57 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content [fullscreen]="true">
-  <ion-card>
-    <ion-card-content>
-      <ion-item>
-        <ion-label position="floating">Nombre</ion-label>
-        <ion-input type="text" [(ngModel)]="nombre"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating">Apellido</ion-label>
-        <ion-input type="text" [(ngModel)]="apellido"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating">Nombre de Usuario</ion-label>
-        <ion-input type="text" [(ngModel)]="usuario"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" [(ngModel)]="password"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Nivel de Educacion</ion-label>
-        <ion-select [(ngModel)]="selectedOption">
-          <ion-select-option value="option1">Enseñansa Media</ion-select-option>
-          <ion-select-option value="option2">Universitaria</ion-select-option>
-          <ion-select-option value="option3">Magister</ion-select-option>
-        </ion-select>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Fecha Nacimiento</ion-label>
-        <ion-item>
-
-          <mat-form-field>
-            <mat-label>dd/mm/yyyy</mat-label>
-            <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
+<ion-content [fullscreen]="true"> <!-- define el area principal donde se muestra los elementos de la pagina -->
+  <ion-card> <!-- Se utilizan para estilizar la forma de registro, dando una apariencia organizada y estructurada -->
+    <ion-card-content> <!-- Encierran el formulario de registro -->
+      <form>
+          
+        <ion-item> <!-- Para agrupar etiquetas e inputs -->
+          <ion-label position="floating">Nombre</ion-label> <!-- Componente de entrada de datos, uno para nombre -->
+          <ion-input type="text" [(ngModel)]="nombre"></ion-input>
         </ion-item>
-      </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Apellido</ion-label>
+          <ion-input type="text" [(ngModel)]="apellido"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Nombre de Usuario</ion-label>
+          <ion-input type="text" [(ngModel)]="usuario"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Correo Electronico</ion-label> <!-- Componente de entrada de datos, uno para correo -->
+          <ion-input type="email" [(ngModel)]="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Tipo de Cliente</ion-label>
+          <ion-select [(ngModel)]="tipo_cliente">
+            <ion-select-option value="Normal">Cliente Normal</ion-select-option>
+            <ion-select-option value="Empresarial">Cliente Empresarial</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Primera Compra</ion-label>
+          <ion-item>
+            <mat-form-field>
+              <mat-label>dd/mm/yyyy</mat-label>
+              <input matInput [matDatepicker]="picker" [(ngModel)]="primera_compra">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle> <!-- componente de angular material, se utiliza para estructura del campo de fecha-->
+              <mat-datepicker #picker></mat-datepicker> <!-- componente de angular material, se utiliza para seleccionar una fecha-->
+            </mat-form-field>
+          </ion-item>
+        </ion-item>
+      </form>
     </ion-card-content>
-    <ion-button (click)="guardar()" expand="block" fill="clear">Registrarme</ion-button>
+    <ion-button (click)="guardar()" expand="block" fill="clear">Registrarme</ion-button> <!-- que ejecuta la función guardar() desde el componente TypeScript -->
   </ion-card>
 </ion-content>

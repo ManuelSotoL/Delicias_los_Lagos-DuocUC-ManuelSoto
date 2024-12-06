@@ -15,7 +15,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';  
 import { CompanyNameComponent } from '../company-name/company-name.component';
 
-/*import { FormatearFechaPipe } from '../pipes/formatear-fecha.pipe';*/
 
 @NgModule({
   imports: [

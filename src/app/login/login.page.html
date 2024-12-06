@@ -13,7 +13,7 @@
 
       <ion-item>
         <ion-label position="floating">Contraseña</ion-label>
-        <ion-input [(ngModel)]="password" type="password"></ion-input>
+        <ion-input [(ngModel)]="password" type="password"></ion-input> <!-- ngModel establece una data bingind -->
       </ion-item>
 
       <ion-button expand="block" (click)="login()" class="login-button">Login</ion-button>
@@ -24,6 +24,4 @@
       </ion-text>
     </ion-card-content>
   </ion-card>
-
-
 </ion-content>

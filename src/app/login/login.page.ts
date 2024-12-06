@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
-import { AlertController } from '@ionic/angular';
-
+import { NavController } from '@ionic/angular'; // maneja la navegacion entre paginas
+import { AlertController } from '@ionic/angular'; // proporciona retroalimentacion del usuario mediante alertas
+import { ServicioDBService } from '../services/servicio-db.service'; // maneja la autenticacion del usuario a travez del metodo validateUser()
 
 @Component({
   selector: 'app-login',
@@ -13,9 +13,16 @@ export class LoginPage implements OnInit {
   email: string = '';
   password: string = '';
 
-  constructor(private navCtrl: NavController, private alertController: AlertController ) { }
+  constructor(private navCtrl: NavController, private alertController: AlertController, private servicioDBService: ServicioDBService ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    try {
+      await this.servicioDBService.initDB();
+      console.log('Base de datos inicializada correctamente en login.page.ts.');
+    } catch (error) {
+      console.error('Error inicializando la base de datos en login.page.ts:', error);
+      this.mostrarAlerta('Error al iniciar la base de datos.');
+    }
   }
 
 
@@ -29,13 +36,13 @@ export class LoginPage implements OnInit {
   }
 
 
-  validarEmail(email: string): boolean {
+  validarEmail(email: string): boolean { // valida el formato del correo electronico mediante una expresion regular
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
 
-  login() {
-    if (!this.email) {
+  async login() { // esta fn utiliza validateUser desde el servicioDBservice
+    if (!this.email.trim()) {
       this.mostrarAlerta('El campo de correo no puede quedar vacio.');
       return;
   }
@@ -45,7 +52,7 @@ export class LoginPage implements OnInit {
     return;
   }
 
-  if (!this.password) {
+  if (!this.password.trim()) {
     this.mostrarAlerta('El campo de contraseña no puede quedar vacio.');
     return;
   }
@@ -55,18 +62,20 @@ export class LoginPage implements OnInit {
       return;
     }
 
-  this.navCtrl.navigateForward(['/home'], {
-    queryParams: {
-      email: this.email,
-      password: this.password
+    try {
+      const isAuthenticated = await this.servicioDBService.validateUser(this.email, this.password);
+      if (isAuthenticated) {
+        this.navCtrl.navigateForward(['/home']);
+      } else {
+        this.mostrarAlerta('Correo o contraseña incorrectos.');
+      }
+    } catch (error) {
+      console.error('Error al iniciar sesión:', error);
+      this.mostrarAlerta('Hubo un problema al conectar con la base de datos.');
     }
-  });
-
-}
-
+  }
 registro()
-{
-  this.navCtrl.navigateForward(['/registro']);
-}
-
+  {
+    this.navCtrl.navigateForward(['/registro']);
+  }
 }

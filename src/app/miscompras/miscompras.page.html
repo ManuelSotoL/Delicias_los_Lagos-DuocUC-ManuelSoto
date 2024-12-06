@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Lista de Productos Comprados</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button menu="mainMenu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h2>Lista de Productos Comprados</h2>
+  <ion-list *ngIf="productos.length > 0; else noProductos">
+    <ion-item *ngFor="let producto of productos">
+      <ion-label>
+        <h2>Nombre Producto: {{ producto.nombre }}</h2>
+        <h2>Precio: {{ producto.precio }}</h2>
+        <h2>Cantidad: {{ producto.cantidad }}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ng-template #noProductos>
+    <h3>No se encontraron productos.</h3>
+  </ng-template>
+  <button (click)="crearProducto()">Agregar un Producto</button>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Mi Perfil</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button menu="mainMenu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="user">
+    <ion-card-header>
+      <ion-card-title>{{ user.nombre }} {{ user.apellido }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Usuario:</strong> {{ user.usuario }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Tipo Cliente:</strong> {{ user.tipo_cliente }}</p>
+      <p><strong>Primera Compra:</strong> {{ user.primera_compra }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="!user">
+    <ion-card-header>
+      <ion-card-title>Sin datos disponibles</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>No se encontraron datos del Cliente en la base de datos.</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
