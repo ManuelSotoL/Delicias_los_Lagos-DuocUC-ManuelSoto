@@ -1,9 +1,14 @@
 ion-list {
-    --background: transparent;
-    background-color: transparent;
+  --background: transparent;
+  background-color: transparent;
 }
 
 ion-item {
---background: transparent;
-background-color: transparent; 
+  --background: transparent;
+  background-color: transparent;
+}
+
+//TODO: cambio color de menu a font blanco
+ion-item {
+  color: #ffffff;
 }

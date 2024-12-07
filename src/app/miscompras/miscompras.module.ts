@@ -8,16 +8,14 @@ import { MiscomprasPageRoutingModule } from './miscompras-routing.module';
 
 import { MiscomprasPage } from './miscompras.page';
 
-import { HttpClientModule } from '@angular/common/http';
-
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     MiscomprasPageRoutingModule,
-    HttpClientModule
   ],
-  declarations: [MiscomprasPage]
+  providers: [],
+  declarations: [MiscomprasPage],
 })
 export class MiscomprasPageModule {}
